@@ -21,7 +21,7 @@ Les notions suivantes seront abordées :
 - L'utilisation de docker-compose
 - La configuration très basique d'un reverse proxy
 
-## Dockerfile
+## Base de donnée
 
 ### Build de l'image
 
