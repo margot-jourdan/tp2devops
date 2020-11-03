@@ -1,6 +1,8 @@
 language: java
 script:
-  - mvn clean verify --file ./simple-api/pom.xml
+  - cd ./simple-api/
+  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=margot-jourdan_tp2devops
+  - cdd ..
   - docker login -u $user -p $password
 
   - docker build -t $user/tpdevop:database database
@@ -10,7 +12,6 @@ script:
   - docker push $user/tpdevop:database
   - docker push $user/tpdevop:httpd
   - docker push $user/tpdevop:simple-api
-  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=margot-jourdan_tp2devops
 
 
 addons:
