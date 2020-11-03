@@ -1,13 +1,13 @@
 language: java
 script:
   - mvn clean verify --file ./simple-api/pom.xml
-  - docker login -u $user -p $password
-  - docker-compose up
-  - docker tag tpdevop $user/tpdevop:1.0
-  - docker push $user/tpdevop
-cache:
-directories:
-  - $HOME/.m2
+  -docker login -u $user -p $password
 
-services:
-  - docker
+  - docker build -t $user/tpdevop:database database
+  - docker build -t $user/tpdevop:httpd httpd
+  - docker build -t $user/tpdevop:simple-api simple-api
+
+  - docker push $user/tpdevop:database
+  - docker push $user/tpdevop:httpd
+  - docker push $user/tpdevop:simple-api
+
