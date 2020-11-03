@@ -24,3 +24,4 @@ addons:
   sonarcloud:
     organization: "devops-org"
     token: $sonarcloudtoken
+
