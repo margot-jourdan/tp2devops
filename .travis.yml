@@ -1,4 +1,13 @@
 language: java
-script :
+script:
   - mvn clean verify --file ./simple-api/pom.xml
-  - docker login -u margotj -p $password
+  - docker login -u $user -p $password
+  - docker-compose up .
+  - docker tag tpdevop $user/tpdevop:1.0
+  - docker push $user/tpdevop
+cache:
+directories:
+  - $HOME/.m2
+
+services:
+  - docker
