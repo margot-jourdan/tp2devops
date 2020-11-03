@@ -18,9 +18,9 @@ script:
     directories:
       - $HOME/.m2
   service:
-  - docker
+    - docker
 
 addons:
   sonarcloud:
     organization: "devops-org"
-    token: "$sonarcloudtoken"
+    token: $sonarcloudtoken
