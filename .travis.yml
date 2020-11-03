@@ -14,11 +14,11 @@ script:
   - docker push $user/tpdevop:httpd
   - docker push $user/tpdevop:simple-api
 
-  cache:
-    directories:
-      - $HOME/.m2
-  service:
-    - docker
+cache:
+  directories:
+    - $HOME/.m2
+service:
+  - docker
 
 addons:
   sonarcloud:
