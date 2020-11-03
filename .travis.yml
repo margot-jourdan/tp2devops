@@ -10,4 +10,11 @@ script:
   - docker push $user/tpdevop:database
   - docker push $user/tpdevop:httpd
   - docker push $user/tpdevop:simple-api
+  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=margot-jourdan_tp2devops
 
+
+addons:
+  sonarcloud:
+    organization: "margot-jourdan"
+    token:
+      secure: "$sonarcloodtoken"
