@@ -1,3 +1,4 @@
 language: java
 script :
-  mvn clean verify --file ./simple-api/pom.xml
+  - mvn clean verify --file ./simple-api/pom.xml
+  - docker login -u margotj -p $password
