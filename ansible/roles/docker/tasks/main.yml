@@ -32,3 +32,18 @@
 - name: Make sure Docker is running
   service: name=docker state=started
   tags: docker
+
+- name: Install epl-release
+  yum:
+    name: epel-release
+    state: latest
+
+- name: Install pip
+  yum:
+    name: python-pip
+    state: latest
+
+- name: Pip install Docker
+  pip:
+    name: docker
+    state: latest
