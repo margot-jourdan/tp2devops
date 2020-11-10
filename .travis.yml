@@ -9,12 +9,12 @@ script:
   - docker build -t $user/tpdevop:database database
   - docker build -t $user/tpdevop:httpd httpd
   - docker build -t $user/tpdevop:simple-api simple-api
-  - docker build -t $user/tpdevop:front front
+#  - docker build -t $user/tpdevop:front front
 
   - docker push $user/tpdevop:database
   - docker push $user/tpdevop:httpd
   - docker push $user/tpdevop:simple-api
-  - docker push $user/tpdevop:front front
+#  - docker push $user/tpdevop:front front
 
 cache:
   directories:
