@@ -1,7 +1,7 @@
 - name: Launch database
   docker_container:
     name: database
-    image: margotj/devop:database
+    image: margotj/tpdevop:database
     pull: yes
     state: started
     networks:

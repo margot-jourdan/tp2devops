@@ -1,7 +1,7 @@
 - name: Launch app
   docker_container:
     name: backend
-    image: margotj/devop:simple-api
+    image: margotj/tpdevop:simple-api
     state: started
     networks:
       - name: app-network

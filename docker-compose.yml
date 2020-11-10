@@ -25,6 +25,14 @@ services:
     networks:
       - app-network
 
+  front:
+    container_name: front
+    build: ./front
+    ports:
+      - "80:00"
+    networks:
+      - app-network
+
 
 volumes:
   my_db_volume:

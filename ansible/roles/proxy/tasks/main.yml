@@ -1,7 +1,7 @@
 - name: Launch proxy
   docker_container:
     name: reverse_proxy
-    image: margotj/devop:httpd
+    image: margotj/tpdevop:httpd
     state: started
     networks:
       - name: app-network
