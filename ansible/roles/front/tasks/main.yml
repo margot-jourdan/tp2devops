@@ -1,0 +1,7 @@
+- name: Launch front
+  docker_container:
+    name: front
+    image: margotj/tpdevop:front
+    state: started
+    networks:
+      - name: app-network
